@@ -1,12 +1,12 @@
 import { FaBackspace } from "react-icons/fa";
-
-function Expenses() {
+import Add from "./Add";
+function Expenses(props) {
   return (
     <div className="expense">
-      <div>💲200</div>
-      <div>Some bit of description about expense</div>
+      <div>💲{props.data.amount}</div>
+      <div>{props.data.description}</div>
       <div>
-        <FaBackspace className="remove" size={30} color={"red"} />
+        <FaBackspace className="remove" size={30} color={"red"} onClick={()=>props.remove(props.data.id)} />
       </div>
     </div>
   );
